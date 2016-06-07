@@ -3,7 +3,7 @@ package chapter1;
 /**
  * Created by bnamora on 6/7/16.
  */
-public class exercise11 {
+public class exercise1_11 {
 
     public static void main(String[] args) {
 
