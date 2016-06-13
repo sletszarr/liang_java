@@ -13,14 +13,13 @@ public class exercise1_11 {
         double totalImmigrantsIn5Years = totalSecondsIn5Years / 45.0;
 
         double currentPopulation = 312032486;
-        double populationIn5Years = totalBirthsIn5Years + totalImmigrantsIn5Years - totalDeathsIn5Years;
+        double populationGrowthIn5Years = totalBirthsIn5Years + totalImmigrantsIn5Years - totalDeathsIn5Years;
 
         System.out.println("Current population: " + currentPopulation);
-        System.out.println("Population in 5 years: " + currentPopulation + populationIn5Years);
-        System.out.println("Population in 10 years: " + currentPopulation + populationIn5Years * 2);
-        System.out.println("Population in 15 years: " + currentPopulation + populationIn5Years * 3);
-        System.out.println("Population in 20 years: " + currentPopulation + populationIn5Years * 4);
-        System.out.println("Population in 25 years: " + currentPopulation + populationIn5Years * 5);
-
+        System.out.println("Population in 5 years: " + currentPopulation + populationGrowthIn5Years);
+        System.out.println("Population in 10 years: " + currentPopulation + populationGrowthIn5Years * 2);
+        System.out.println("Population in 15 years: " + currentPopulation + populationGrowthIn5Years * 3);
+        System.out.println("Population in 20 years: " + currentPopulation + populationGrowthIn5Years * 4);
+        System.out.println("Population in 25 years: " + currentPopulation + populationGrowthIn5Years * 5);
     }
 }
