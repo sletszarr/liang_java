@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by bnamora on 6/13/16.
  */
-public class eg26_fahrenheitToCelcius {
+public class Eg26_FahrenheitToCelcius {
 
     public static void main(String[] args) {
 

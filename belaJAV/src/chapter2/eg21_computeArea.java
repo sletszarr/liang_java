@@ -3,7 +3,7 @@ package chapter2;
 /**
  * Created by bnamora on 6/13/16.
  */
-public class eg21_computeArea {
+public class Eg21_ComputeArea {
 
     public static void main(String[] args) {
 

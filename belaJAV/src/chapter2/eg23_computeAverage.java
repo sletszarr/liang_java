@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by bnamora on 6/13/16.
  */
-public class eg23_computeAverage {
+public class Eg23_ComputeAverage {
 
     public static void main(String[] args) {
 
