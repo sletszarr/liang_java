@@ -12,13 +12,14 @@ public class Ex213_CompoundValue {
 
         Scanner input = new Scanner(System.in);
 
-        double interestRate = 5.0 / 100;
+        System.out.print("Enter the monthly saving & interest rate: ");
+        double savingAmount = input.nextDouble();
+        double interestRate = input.nextDouble() / 100;
+
         double monthlyInterestRate = interestRate / 12;
         double compoundInterest = 1 + monthlyInterestRate;
         double compoundValue = 0.0;
 
-        System.out.print("Enter the monthly saving: ");
-        double savingAmount = input.nextDouble();
 
         compoundValue = (savingAmount + compoundValue) * compoundInterest;
         compoundValue = (savingAmount + compoundValue) * compoundInterest;
