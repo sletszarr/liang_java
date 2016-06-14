@@ -4,6 +4,14 @@ import java.util.Scanner;
 
 /**
  * Created by bnamora on 6/13/16.
+ *
+ * (Population projection)
+ * Rewrite Programming Exercise 1.11 to prompt the user to enter the number of years
+ * and displays the population after the number of years.
+ *
+ * Use the hint in Programming Exercise 1.11 for this program.
+ * The population should be cast into an integer.
+ *
  */
 
 public class Ex2_11_PopulationProjection {

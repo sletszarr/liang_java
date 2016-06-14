@@ -4,6 +4,17 @@ import java.util.Scanner;
 
 /**
  * Created by bnamora on 6/14/16.
+ *
+ * (Geometry: area of a hexagon)
+ * Write a program that prompts the user to enter the side of a hexagon and displays its area.
+ * The formula for computing the area of a hexagon is
+ *
+ *             3*3^0.5
+ *      Area = ------- s^2
+ *                2
+ *
+ * where s is the length of a side.
+ *
  */
 
 public class Ex2_16_AreaOfHexagon {

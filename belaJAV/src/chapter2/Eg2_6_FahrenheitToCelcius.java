@@ -5,6 +5,7 @@ import java.util.Scanner;
 /**
  * Created by bnamora on 6/13/16.
  */
+
 public class Eg2_6_FahrenheitToCelcius {
 
     public static void main(String[] args) {

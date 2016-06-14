@@ -4,6 +4,16 @@ import java.util.Scanner;
 
 /**
  * Created by bnamora on 6/14/16.
+ *
+ * (Financial application: calculate interest)
+ * If you know the balance and the annual percentage interest rate,
+ * you can compute the interest on the next monthly pay- ment using the following formula:
+ *
+ *      interest = balance * (annualInterestRate/1200)
+ *
+ * Write a program that reads the balance and the annual percentage interest rate
+ * and displays the interest for the next month.
+ *
  */
 
 public class Ex2_20_CalculateInterest {

@@ -4,6 +4,16 @@ import java.util.Scanner;
 
 /**
  * Created by bnamora on 6/14/16.
+ *
+ * Geometry: distance of two points)
+ * Write a program that prompts the user to enter two points (x1, y1) and (x2, y2)
+ * and displays their distance between them.
+ *
+ * The formula for computing the distance is
+ * [(x2 - x1)^2 + (y2 - y1)^2]^0.5
+ *
+ * Note that you can use Math.pow(a, 0.5) to compute a^0.5
+ *
  */
 
 public class Ex2_15_DistanceOfTwoPoints {

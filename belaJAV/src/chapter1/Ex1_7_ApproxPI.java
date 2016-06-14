@@ -2,7 +2,21 @@ package chapter1;
 
 /**
  * Created by bnamora on 6/7/16.
+ *
+ * (Approximate π)
+ * π can be computed using the following formula:
+ *
+ *                       1     1     1     1     1
+ *      π = 4 x (  1  -  -  +  -  -  -  +  -  -  -  + ...  )
+ *                       3     5     7     9     11
+ *
+ * Write a program that displays the result of
+ *                       1     1     1     1     1     1
+ *          4 x (  1  -  -  +  -  -  -  +  -  -  -  +  -  )
+ *                       3     5     7     9     11    13
+ *
  */
+
 public class Ex1_7_ApproxPI {
 
     public static void main(String[] args) {

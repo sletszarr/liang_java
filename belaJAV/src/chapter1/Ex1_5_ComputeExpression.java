@@ -2,6 +2,13 @@ package chapter1;
 
 /**
  * Created by bnamora on 6/7/16.
+ *
+ * (Compute expressions)
+ * Write a program that displays the result of
+ * 9.5 * 4.5 - 2.5 * 3
+ * -------------------
+ *      45.5 - 3.5
+ *
  */
 
 public class Ex1_5_ComputeExpression {
