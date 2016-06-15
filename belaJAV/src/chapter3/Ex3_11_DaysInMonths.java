@@ -18,6 +18,8 @@ public class Ex3_11_DaysInMonths {
         System.out.print("Enter year: ");
         int year = input.nextInt();
 
+        boolean isLeapYear = ((year % 4 == 0 || year % 400 == 0) && year % 100 != 0);
+
         int days = 0;
         String[] monthName = {"January", "February", "March", "April", "Mei", "June", "July", "August", "September", "October", "November", "December"};
 
@@ -38,7 +40,7 @@ public class Ex3_11_DaysInMonths {
                 days = 30;
                 break;
             case 1:
-                if ((year % 4 == 0 || year % 400 == 0) && year % 100 != 0) {
+                if (isLeapYear) {
                     days = 29;
                 } else {
                     days = 28;
