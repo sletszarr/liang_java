@@ -14,8 +14,7 @@ public class Ex3_15_ThreeDigitsLottery {
         Scanner input = new Scanner(System.in);
         Random rand = new Random();
 
-        int lotteryNum = rand.nextInt(999)+100;
-        System.out.println(lotteryNum);
+        int lotteryNum = rand.nextInt(900)+100;
 
         System.out.print("Enter your lottery pick (three digits): ");
         int guessNum = input.nextInt();
