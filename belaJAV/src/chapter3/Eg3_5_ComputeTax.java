@@ -19,6 +19,11 @@ public class Eg3_5_ComputeTax {
         System.out.printf("Enter your filing status: ");
         int status = input.nextInt();
 
+        boolean single = (status == 0);
+        boolean marriedOrWidow = (status == 1);
+        boolean marriedSeparateFiling = (status == 2);
+        boolean headOfHouseHold = (status == 3);
+
         System.out.printf("Enter the taxable income: ");
         double income = input.nextInt();
 
@@ -29,14 +34,14 @@ public class Eg3_5_ComputeTax {
         double upperLimit28 = 0;
         double upperLimit33 = 0;
 
-        if (status == 0) {
+        if (single) {
             upperLimit10 = 8350;
             upperLimit15 = 33950;
             upperLimit25 = 82250;
             upperLimit28 = 171550;
             upperLimit33 = 372950;
         }
-        else if (status == 1) {
+        else if (marriedOrWidow) {
             upperLimit10 = 16700;
             upperLimit15 = 67900;
             upperLimit25 = 137050;
@@ -44,7 +49,7 @@ public class Eg3_5_ComputeTax {
             upperLimit33 = 372950;
         }
 
-        else if (status == 2) {
+        else if (marriedSeparateFiling) {
             upperLimit10 = 8350;
             upperLimit15 = 33950;
             upperLimit25 = 68525;
@@ -52,7 +57,7 @@ public class Eg3_5_ComputeTax {
             upperLimit33 = 186475;
         }
 
-        else if (status == 3) {
+        else if (headOfHouseHold) {
             upperLimit10 = 11950;
             upperLimit15 = 45500;
             upperLimit25 = 117450;
