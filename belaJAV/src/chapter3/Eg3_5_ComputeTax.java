@@ -23,6 +23,12 @@ public class Eg3_5_ComputeTax {
         boolean marriedOrWidow = (status == 1);
         boolean marriedSeparateFiling = (status == 2);
         boolean headOfHouseHold = (status == 3);
+        boolean invalidChoice = (status < 0 && status > 3);
+
+        if (invalidChoice) {
+            System.out.println("Error: invalid status");
+            System.exit(1);
+        }
 
         System.out.printf("Enter the taxable income: ");
         double income = input.nextInt();
