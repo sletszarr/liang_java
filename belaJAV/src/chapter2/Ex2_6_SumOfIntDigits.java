@@ -23,9 +23,14 @@ public class Ex2_6_SumOfIntDigits {
         System.out.print("Enter a number between 0 and 1000: ");
         int number = input.nextInt();
 
-        int firstDigit = number / 100;
-        int secondDigit = (number % 100) / 10;
-        int thirdDigit = (number % 10);
+        int thirdDigit = number % 10;
+        number /= 10;
+
+        int secondDigit = number % 10;
+        number /= 10;
+
+        int firstDigit = number;
+
         int sumOfDigits = firstDigit + secondDigit + thirdDigit;
 
         System.out.println("The sum of the digits is " + sumOfDigits);
