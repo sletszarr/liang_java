@@ -12,8 +12,8 @@ public class Ex3_16_RandomCoordinatePoint {
 
         Random rand = new Random();
 
-        int x = rand.nextInt(101);
-        int y = rand.nextInt(201);
+        int x = rand.nextInt(101) - 50;
+        int y = rand.nextInt(201) - 50;
 
         System.out.println("(x,y) = (" + x + "," + y + ")");
 
