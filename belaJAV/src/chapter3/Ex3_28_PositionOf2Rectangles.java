@@ -24,20 +24,23 @@ public class Ex3_28_PositionOf2Rectangles {
         double bWidth = input.nextDouble();
         double bHeight = input.nextDouble();
 
-        boolean bXInsideA = ((Math.abs(bCenterX - aCenterX) + bWidth / 2) <= (aWidth / 2));
-        boolean bYInsideA = ((Math.abs(bCenterY - aCenterY) + bHeight / 2) <= (aHeight / 2));
+        double distanceXBetweenCenter = Math.abs(bCenterX - aCenterX);
+        double distanceYBetweenCenter = Math.abs(bCenterY - aCenterY);
+
+        boolean bXInsideA = (distanceXBetweenCenter + bWidth / 2) <= (aWidth / 2);
+        boolean bYInsideA = (distanceYBetweenCenter + bHeight / 2) <= (aHeight / 2);
         boolean bInsideA = (bXInsideA && bYInsideA);
 
-        boolean aXInsideB = ((Math.abs(aCenterX - bCenterX) + aWidth / 2) <= (bWidth / 2));
-        boolean aYInsideB = ((Math.abs(aCenterX - bCenterX) + aHeight / 2) <= (bHeight / 2));
+        boolean aXInsideB = (distanceXBetweenCenter + aWidth / 2) <= (bWidth / 2);
+        boolean aYInsideB = (distanceYBetweenCenter + aHeight / 2) <= (bHeight / 2);
         boolean aInsideB = (aXInsideB && aYInsideB);
 
-        boolean bXOverlapA = (Math.abs(aCenterX - bCenterX) < (aWidth / 2 + bWidth / 2));
-        boolean bYOverlapA = (Math.abs(aCenterY - bCenterY) < (aHeight / 2 + bHeight / 2));
+        boolean bXOverlapA = (distanceXBetweenCenter < (aWidth / 2 + bWidth / 2));
+        boolean bYOverlapA = (distanceYBetweenCenter < (aHeight / 2 + bHeight / 2));
         boolean bOverlapA = (bXOverlapA || bYOverlapA);
 
-        boolean bXOutsideA = (Math.abs(aCenterX - bCenterX) > (aWidth / 2 + bWidth / 2));
-        boolean bYOutsideA = (Math.abs(aCenterY - bCenterY) > (aWidth / 2 + bWidth / 2));
+        boolean bXOutsideA = (distanceXBetweenCenter > (aWidth / 2 + bWidth / 2));
+        boolean bYOutsideA = (distanceYBetweenCenter > (aWidth / 2 + bWidth / 2));
         boolean bOutsideA = (bXOutsideA && bYOutsideA);
 
         if (bInsideA) {
