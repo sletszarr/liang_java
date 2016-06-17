@@ -27,8 +27,16 @@ public class Ex3_30_CurrentTime12Hours {
         long hourNow = totalHours % 24;
         long hourOffset = hourNow + gmtOffset;
         long hourHalfDay = hourOffset % 12;
+        hourHalfDay = (hourHalfDay == 0) ? 12 : hourHalfDay;
 
-        System.out.println("The current time is " + hourHalfDay + ":" + minuteNow + ":" + secondNow);
+        if (hourOffset >= 12) {
+            System.out.println((hourOffset == 24)?"The current time is " + hourHalfDay + ":" + minuteNow + ":" + secondNow + "AM":
+                                                  "The current time is " + hourHalfDay + ":" + minuteNow + ":" + secondNow + "PM");
+        }
+
+        else {
+            System.out.println("The current time is " + hourHalfDay + ":" + minuteNow + ":" + secondNow + "AM");
+        }
 
     }
 
