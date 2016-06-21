@@ -14,21 +14,23 @@ public class Ex4_13_VowelOrConsonant {
 
         // prompt user to input a char
         System.out.print("Enter a letter: ");
-        char letter = input.nextLine().charAt(0);
+        String letter = input.nextLine();
+        char ch = letter.charAt(0);
 
-        // check if it's a vowel or a consonant
-        if (Character.toLowerCase(letter) == 'a'
-                || Character.toLowerCase(letter) == 'i'
-                || Character.toLowerCase(letter) == 'u'
-                || Character.toLowerCase(letter) == 'e'
-                || Character.toLowerCase(letter) == 'o') {
-            System.out.println(letter+" is a vowel");
-        }
-        else if (Character.isLetter(letter)) {
-            System.out.println(letter+" is a consonant");
+        if (letter.length() == 1 && Character.isLetter(ch)) {
+
+            String vowel = "aiueoAIUEO";
+
+            // check if it's a vowel or a consonant
+            if (vowel.indexOf(ch) > 0) {
+                System.out.println(letter + " is a vowel");
+            } else if (vowel.indexOf(ch) < 0) {
+                System.out.println(letter + " is a consonant");
+            }
+
         }
         else {
-            System.out.println(letter+" is an invalid input");
+            System.out.println("You can only input 1 character of a valid letter");
         }
 
     }
