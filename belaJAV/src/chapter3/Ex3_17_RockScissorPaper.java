@@ -12,44 +12,52 @@ public class Ex3_17_RockScissorPaper {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        Random rand = new Random();
+        String[] hands = {"Scissor", "Rock", "Paper"};
 
-        int computerHand = rand.nextInt(3);
+        // game state
+        boolean computerWin = false;
+        boolean draw = false;
 
-        System.out.print("scissor (0), rock (1), paper (2): ");
+        // computer pick a hand
+        int computerHand = (int) (Math.random() * 3);
+        computerHand = 2;
+
+        // user pick a hand
+        System.out.print("" +
+                "(0) Scissor\n" +
+                "(1) Rock\n" +
+                "(2) Paper\n" +
+                "Pick your hand: ");
         int userHand = input.nextInt();
 
-        switch (userHand) {
-            case 0:
-                if (computerHand == 0) {
-                    System.out.println("The computer is scissor. You are scissor. It is a draw");
-                } else if (computerHand == 1) {
-                    System.out.println("The computer is rock. You are scissor. You lost");
-                } else {
-                    System.out.println("The computer is paper. You are scissor. You won");
-                }
-                break;
-            case 1:
-                if (computerHand == 0) {
-                    System.out.println("The computer is scissor. You are rock. You won");
-                } else if (computerHand == 1) {
-                    System.out.println("The computer is rock. You are rock. It is a draw");
-                } else {
-                    System.out.println("The computer is paper. You are rock. You lost");
-                }
-                break;
-            case 2:
-                if (computerHand == 0) {
-                    System.out.println("The computer is scissor. You are paper. You lost");
-                } else if (computerHand == 1) {
-                    System.out.println("The computer is rock. You are paper. You won");
-                } else {
-                    System.out.println("The computer is paper. You are paper. It is a draw");
-                }
-                break;
-            default:
-                System.out.println("Your input is not valid");
-                System.exit(1);
+        // determine the winner
+        if (computerHand == userHand) {
+            draw = true;
+        }
+        else if (computerHand < userHand) {
+            computerWin = (computerHand == 0 && userHand == 2);
+        }
+        else {
+            computerWin = (computerHand != 2 || userHand != 0);
+        }
+
+
+        // display result
+        if (draw) {
+            System.out.println("It's a draw" +
+                            "\nComputer is " + hands[computerHand] +
+                            "\nUser hand is " + hands[userHand]
+            );
+        }
+        else if (computerWin) {
+            System.out.println("You lose" +
+                    "\nComputer is " + hands[computerHand] +
+                    "\nYou are " + hands[userHand]);
+        }
+        else {
+            System.out.println("You win" +
+                    "\nComputer is " + hands[computerHand] +
+                    "\nYou are " + hands[userHand]);
         }
 
     }
