@@ -24,7 +24,7 @@ public class Ex5_39_FindTheSalesAmount {
                 commission = (5000 * 0.08) + (salesAmount - 5000) * 0.1;
             }
             else {
-                commission = (5000 * 0.08) + (10000 * 0.1) + (salesAmount - 10000) * 0.12;
+                commission = (5000 * 0.08) + (5000 * 0.1) + (salesAmount - 10000) * 0.12;
             }
 
             salesAmount += 0.01;
