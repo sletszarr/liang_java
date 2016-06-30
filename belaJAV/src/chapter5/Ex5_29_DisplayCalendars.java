@@ -15,7 +15,7 @@ public class Ex5_29_DisplayCalendars {
         System.out.print("Enter the year: ");
         int year = input.nextInt();
 
-        boolean isLeapYear = ((year % 400 == 0 || year % 4 == 0) && year % 100 != 0);
+        boolean isLeapYear = year % 400 == 0 || (year % 4 == 0 && year % 100 != 0);
 
         System.out.print("Enter the day: ");
         int firstDay = input.nextInt();
