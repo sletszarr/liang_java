@@ -76,7 +76,7 @@ public class Ex3_13_ComputeTax {
         }
         else if (income <= upperLimit15) {
             tax = upperLimit10 * 0.10
-                    + (income - upperLimit10 * 0.15);
+                    + (income - upperLimit10) * 0.15;
         }
         else if (income <= upperLimit25) {
             tax = upperLimit10 * 0.10
