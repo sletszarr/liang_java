@@ -39,16 +39,7 @@ public class Ex6_31_CreditCardNumberValidation {
     }
 
     public static long getPrefix(long number, int k) {
-
-        String prefix = "";
-        String numString = number + "";
-
-        for (int i = 0; i < k; i++) {
-            prefix += numString.charAt(i);
-        }
-
-        return Long.parseLong(prefix);
-
+        return number / (long) Math.pow(10, getSize(number) - k);
     }
 
     public static boolean isValidPrefix(long number) {
@@ -77,8 +68,15 @@ public class Ex6_31_CreditCardNumberValidation {
     }
 
     public static int getSize(long number) {
-        String numString = number + "";
-        return numString.length();
+        int size = 0;
+
+        while (number > 0) {
+            number /= 10;
+            size++;
+        }
+
+        return size;
+
     }
 
     public static int getSingleDigit(int num) {
@@ -87,14 +85,15 @@ public class Ex6_31_CreditCardNumberValidation {
 
     public static int getSumOfDoubledEvenPlace(long number) {
 
-        String numString = number + "";
         int sum = 0;
         int doubledVal;
+        number /= 10;
 
-        for (int i = numString.length() - 2; i >= 0; i -= 2) {
-            doubledVal = Character.getNumericValue(numString.charAt(i)) * 2;
+        while (number > 0) {
+            doubledVal = (int) (number % 10) * 2;
             doubledVal = (doubledVal > 9) ? getSingleDigit(doubledVal) : doubledVal;
             sum += doubledVal;
+            number /= 100;
         }
 
         return sum;
@@ -103,11 +102,11 @@ public class Ex6_31_CreditCardNumberValidation {
 
     public static int getSumOfOddPlace(long number) {
 
-        String numString = number + "";
         int sum = 0;
 
-        for (int i = numString.length() - 1; i >= 0; i -= 2) {
-            sum += Character.getNumericValue(numString.charAt(i));
+        while (number > 0) {
+            sum += number % 10;
+            number /= 100;
         }
 
         return sum;
