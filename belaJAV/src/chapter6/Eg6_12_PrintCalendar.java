@@ -48,7 +48,7 @@ public class Eg6_12_PrintCalendar {
             System.out.print("    ");
         }
 
-        for (int i = 1; i < numberOfDaysInMonth; i++) {
+        for (int i = 1; i <= numberOfDaysInMonth; i++) {
             System.out.printf("%4d", i);
 
             if (++startDay % 7 == 0) {
