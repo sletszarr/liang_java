@@ -42,7 +42,7 @@ public class Ex7_16_ExecutionTime {
     }
 
     public static int[] generateRandomNums(){
-        int[] randomNumbers = new int[1000];
+        int[] randomNumbers = new int[100000];
         for (int i = 0; i < randomNumbers.length; i++) {
             randomNumbers[i] = (int) (Math.random() * 10000);
         }
@@ -62,17 +62,14 @@ public class Ex7_16_ExecutionTime {
 
     public static void sort(int[] numbers) {
 
-        int smallestNum;
         int smallestNumIndex;
         int temp;
 
         for (int i = 0; i < numbers.length; i++) {
-            smallestNum = numbers[i];
             smallestNumIndex = i;
 
-            for (int k = i; k < numbers.length; k++) {
-                if (numbers[k] < smallestNum) {
-                    smallestNum = numbers[k];
+            for (int k = i + 1; k < numbers.length; k++) {
+                if (numbers[k] < numbers[smallestNumIndex]) {
                     smallestNumIndex = k;
                 }
             }
