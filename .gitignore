@@ -4,4 +4,6 @@ out
 *.iml
 
 scratch.java
+
 scratch.txt
+belaJAV/src/test/*
