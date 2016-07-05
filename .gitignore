@@ -1,4 +1,7 @@
 .idea
-out/
+out
+/
 *.iml
+
 scratch.java
+scratch.txt
