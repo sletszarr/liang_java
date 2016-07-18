@@ -93,110 +93,83 @@ public class Ex8_19_ConsecutiveFour {
 
     }
 
-    // scanning left to right diagonal
-    public static void scanConsecutiveLTRDiagonal(int[][] array) {
+    // scanning diagonals
+    public static void scanConsecutiveDiagonal(int[][] array) {
 
-        for (int i = array.length - 4; i >= 0; i--) {
+        int startingRow;
 
-            int consecutiveCount = 0;
-            int consecutiveNum = 0;
-
-            for (int row = i, col = 0;
-                 row < array.length - 1 && col < array[0].length - 1;
-                 row++, col++) {
-
-                if (array[row][col] == array[row + 1][col + 1]) {
-                    consecutiveCount++;
-                    consecutiveNum = array[row][col];
-                } else {
-                    consecutiveCount = 0;
-                }
-
-                if (consecutiveCount == 3) {
-                    System.out.printf("four consecutive %d from (%d, %d) " +
-                                    "to (%d, %d)\n", consecutiveNum,
-                            row - 2, col - 2, row + 1, col + 1);
-                    break;
-                }
+        // scanning left to right diagonal
+        startingRow = array.length - 4;
+        for (int startingCol = 0; startingCol <= array[0].length - 4; startingCol++) {
+            while (startingRow != 0) {
+                scanLTR(startingRow, startingCol, array);
+                startingRow--;
             }
+            scanLTR(startingRow, startingCol, array);
         }
 
-        for (int i = 1; i < array[0].length - 3; i++) {
-            int consecutiveCount = 0;
-            int consecutiveNum = 0;
+        // scanning right to left diagonal
+        startingRow = array.length - 4;
+        for (int startingCol = array[0].length - 1; startingCol >= 3; startingCol--) {
+            while (startingRow != 0) {
+                scanRTL(startingRow, startingCol, array);
+                startingRow--;
+            }
+            scanRTL(startingRow, startingCol, array);
+        }
 
-            for (int col = i, row = 0;
-                 row < array.length - 1 && col < array[row].length - 1;
-                 col++, row++) {
+    }
 
-                if (array[row][col] == array[row + 1][col + 1]) {
-                    consecutiveCount++;
-                    consecutiveNum = array[row][col];
-                } else {
-                    consecutiveCount = 0;
-                }
+    public static void scanLTR(int startingRow, int startingCol, int[][] array) {
 
-                if (consecutiveCount == 3) {
-                    System.out.printf("four consecutive %d from (%d, %d) " +
-                                    "to (%d, %d)\n", consecutiveNum,
-                            row - 2, col - 2, row + 1, col + 1);
-                    break;
-                }
+        int consecutiveCount = 0;
+        int consecutiveNum = 0;
+
+        for (int row = startingRow, col = startingCol;
+             row < array.length - 1 && col < array[0].length - 1;
+             row++, col++) {
+
+            if (array[row][col] == array[row + 1][col + 1]) {
+                consecutiveCount++;
+                consecutiveNum = array[row][col];
+            } else {
+                consecutiveCount = 0;
+            }
+
+            if (consecutiveCount == 3) {
+                System.out.printf("four consecutive %d from (%d, %d) " +
+                                "to (%d, %d)\n", consecutiveNum,
+                        row - 2, col - 2, row + 1, col + 1);
+                break;
             }
         }
 
     }
 
-    // scanning right to left diagonal
-    public static void scanConsecutiveRTLDiagonal(int[][] array) {
+    public static void scanRTL(int startingRow, int startingCol, int[][] array) {
 
-        for (int i = 3; i < array[0].length; i++) {
-            int consecutiveCount = 0;
-            int consecutiveNum = 0;
+        int consecutiveCount = 0;
+        int consecutiveNum = 0;
 
-            for (int col = i, row = 0;
-                 col > 0 && row < array.length - 1;
-                 col--, row++) {
+        for (int row = startingRow, col = startingCol;
+             row < array.length - 1 && col > 0;
+             row++, col--) {
 
-                if (array[row][col] == array[row + 1][col - 1]) {
-                    consecutiveCount++;
-                    consecutiveNum = array[row][col];
-                } else {
-                    consecutiveCount = 0;
-                }
-
-                if (consecutiveCount == 3) {
-                    System.out.printf("four consecutive %d from (%d, %d) " +
-                                    "to (%d, %d)\n", consecutiveNum,
-                            row - 2, col + 2, row + 1, col - 1);
-                }
+            if (array[row][col] == array[row + 1][col - 1]) {
+                consecutiveCount++;
+                consecutiveNum = array[row][col];
+            } else {
+                consecutiveCount = 0;
             }
-        }
 
-        for (int i = 1; i < array.length - 3; i++) {
-            int consecutiveCount = 0;
-            int consecutiveNum = 0;
-
-            for (int row = i, col = array[0].length - 1;
-                 row < array.length - 1 && col > 0;
-                 row++, col--) {
-
-                if (array[row][col] == array[row + 1][col - 1]) {
-                    consecutiveCount++;
-                    consecutiveNum = array[row][col];
-                } else {
-                    consecutiveCount = 0;
-                }
-
-                if (consecutiveCount == 3) {
-                    System.out.printf("four consecutive %d from (%d, %d) " +
-                                    "to (%d, %d)\n", consecutiveNum,
-                            row - 2, col + 2, row + 1, col - 1);
-
-                }
+            if (consecutiveCount == 3) {
+                System.out.printf("four consecutive %d from (%d, %d) " +
+                                "to (%d, %d)\n", consecutiveNum,
+                        row - 2, col + 2, row + 1, col - 1);
+                break;
             }
-        }
 
+        }
 
     }
 
@@ -204,8 +177,7 @@ public class Ex8_19_ConsecutiveFour {
 
         scanConsecutiveRow(array);
         scanConsecutiveCol(array);
-        scanConsecutiveLTRDiagonal(array);
-        scanConsecutiveRTLDiagonal(array);
+        scanConsecutiveDiagonal(array);
 
     }
 
