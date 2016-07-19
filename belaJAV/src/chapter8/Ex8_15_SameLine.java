@@ -42,24 +42,13 @@ public class Ex8_15_SameLine {
 
     public static boolean isAllOnTheSameLine(double[][] points) {
 
-        // get line
-        int lineStartIndex = getLineIndexIn(points)[0];
-        int lineEndIndex = getLineIndexIn(points)[1];
-
-        // prepare flag
-        boolean allOnTheSameLine = true;
-
-        for (int i = 0; i < points.length; i++) {
-            // if i is line start/end
-            if (i == lineStartIndex || i == lineEndIndex)
-                continue;
-
-            if (!isOnTheSameLine(
-                    points[lineStartIndex], points[lineEndIndex], points[i]))
-                allOnTheSameLine = false;
+        for (int i = 2; i < points.length; i++) {
+            if (!isOnTheSameLine(points[0], points[1], points[i])) {
+                return false;
+            }
         }
 
-        return allOnTheSameLine;
+        return true;
 
     }
 
@@ -79,39 +68,11 @@ public class Ex8_15_SameLine {
         double pY = point[1];
 
         // calculate determinant
-        double determinant = (endX - startX) * (pY - startY) -
-                (pX - startX) * (endY - startY);
+        double determinant =
+                (pY - startY) * (endX - startX) -
+                        (pX - startX) * (endY - startY);
 
         return determinant == 0;
-    }
-
-    public static int[] getLineIndexIn(double[][] points) {
-
-        // initial line start's x coordinate
-        double startX = points[0][0];
-        int lineStart = 0;
-
-        // initial line end's x coordinate
-        double endX = points[0][0];
-        int lineEnd = 0;
-
-        // get the line's start point
-        for (int i = 0; i < points.length; i++) {
-            if (points[i][0] < startX) {
-                startX = points[i][0];
-                lineStart = i;
-            }
-        }
-
-        // get the line's end point
-        for (int i = 0; i < points.length; i++) {
-            if (points[i][0] > endX) {
-                endX = points[i][0];
-                lineEnd = i;
-            }
-        }
-
-        return new int[]{lineStart, lineEnd};
     }
 
 }
