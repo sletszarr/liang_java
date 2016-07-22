@@ -9,12 +9,16 @@ public class Fan {
     final static int SLOW = 1;
     final static int MEDIUM = 2;
     final static int FAST = 3;
-    private int speed = SLOW;
-    private boolean on = false;
-    private double radius = 5;
-    private String color = "blue";
+    private int speed;
+    private boolean on;
+    private double radius;
+    private String color;
 
     Fan() {
+        this.speed = SLOW;
+        this.on = false;
+        this.radius = 5;
+        this.color = "blue";
     }
 
     public int getSpeed() {
@@ -42,7 +46,7 @@ public class Fan {
     }
 
     public void setRadius(double radius) {
-        this.radius = radius;
+        this.radius = (radius > 0) ? radius : 0;
     }
 
     public String getColor() {
