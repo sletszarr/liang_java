@@ -6,17 +6,23 @@ package chapter9.Ex9_9_NSidedRegularPolygon;
 
 public class RegularPolygon {
 
-    private int nSide = 3;
-    private double sideLength = 1;
-    private double centerX = 0;
-    private double centerY = 0;
+    private int nSide;
+    private double sideLength;
+    private double centerX;
+    private double centerY;
 
     RegularPolygon() {
+        this.nSide = 3;
+        this.sideLength = 1;
+        this.centerX = 0;
+        this.centerY = 0;
     }
 
     RegularPolygon(int nSide, double sideLength) {
         this.nSide = nSide;
         this.sideLength = sideLength;
+        this.centerX = 0;
+        this.centerY = 0;
     }
 
     RegularPolygon(int nSide, double sideLength,
