@@ -1,14 +1,14 @@
-package chapter10;
+package chapter10.Eg10_78_StackOfIntegers;
 
 /**
  * Created by bnamora on 7/23/16.
  */
-public class Eg10_7_TestStackOfIntegers {
+public class TestStackOfIntegers {
 
     public static void main(String[] args) {
 
         // create stack object
-        Eg10_8_StackOfIntegers stack = new Eg10_8_StackOfIntegers();
+        StackOfIntegers stack = new StackOfIntegers();
 
         // push 10 randoms
         for (int i = 0; i < 10; i++) {

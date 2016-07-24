@@ -1,4 +1,4 @@
-package chapter10;
+package chapter10.Eg10_12_LoanClass;
 
 import java.util.Date;
 
@@ -6,20 +6,20 @@ import java.util.Date;
  * Created by bnamora on 7/22/16.
  */
 
-public class Eg10_2_Loan {
+public class Loan {
 
     private double annualInterestRate;
     private int numberOfYears;
     private double loanAmount;
     private Date loanDate;
 
-    public Eg10_2_Loan() {
+    public Loan() {
         this(2.5, 1, 1000);
     }
 
-    public Eg10_2_Loan(double annualInterestRate,
-                       int numberOfYears,
-                       double loanAmount) {
+    public Loan(double annualInterestRate,
+                int numberOfYears,
+                double loanAmount) {
         this.annualInterestRate = annualInterestRate;
         this.numberOfYears = numberOfYears;
         this.loanAmount = loanAmount;

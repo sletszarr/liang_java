@@ -1,10 +1,10 @@
-package chapter10;
+package chapter10.Eg10_34_BMIClass;
 
 /**
  * Created by bnamora on 7/22/16.
  */
 
-public class Eg10_4_BMI {
+public class BMI {
 
     private String name;
     private int age;
@@ -13,19 +13,19 @@ public class Eg10_4_BMI {
     public static final double KILOGRAMS_PER_POUND = 0.45359237;
     public static final double METERS_PER_INCHES = 0.0254;
 
-    public Eg10_4_BMI(String name,
-                      int age,
-                      double weight,
-                      double height) {
+    public BMI(String name,
+               int age,
+               double weight,
+               double height) {
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.height = height;
     }
 
-    public Eg10_4_BMI(String name,
-                      double weight,
-                      double height) {
+    public BMI(String name,
+               double weight,
+               double height) {
         this(name, 20, weight, height);
     }
 

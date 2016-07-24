@@ -1,4 +1,4 @@
-package chapter10;
+package chapter10.Eg10_12_LoanClass;
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Created by bnamora on 7/22/16.
  */
 
-public class Eg10_1_TestLoanClass {
+public class TestLoanClass {
 
     public static void main(String[] args) {
 
@@ -28,8 +28,8 @@ public class Eg10_1_TestLoanClass {
         double loanAmount = input.nextDouble();
 
         // create loan object
-        Eg10_2_Loan loan =
-                new Eg10_2_Loan(annualInterestRate, numberOfYears, loanAmount);
+        Loan loan =
+                new Loan(annualInterestRate, numberOfYears, loanAmount);
 
         // display loan date,
         // monthly payment & total payment

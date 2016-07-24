@@ -1,16 +1,16 @@
-package chapter10;
+package chapter10.Eg10_56_CourseClass;
 
 /**
  * Created by bnamora on 7/23/16.
  */
 
-public class Eg10_5_TestCourse {
+public class TestCourse {
 
     public static void main(String[] args) {
 
         // create course
-        Eg10_6_Course course1 = new Eg10_6_Course("Data Structures");
-        Eg10_6_Course course2 = new Eg10_6_Course("Database Systems");
+        Course course1 = new Course("Data Structures");
+        Course course2 = new Course("Database Systems");
 
         // add student to course1
         course1.addStudent("Peter Jones");

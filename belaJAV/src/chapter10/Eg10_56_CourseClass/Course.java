@@ -1,15 +1,15 @@
-package chapter10;
+package chapter10.Eg10_56_CourseClass;
 
 /**
  * Created by bnamora on 7/23/16.
  */
-public class Eg10_6_Course {
+public class Course {
 
     private String courseName;
     private String[] students = new String[100];
     private int numberOfStudents;
 
-    public Eg10_6_Course(String courseName) {
+    public Course(String courseName) {
         this.courseName = courseName;
     }
 

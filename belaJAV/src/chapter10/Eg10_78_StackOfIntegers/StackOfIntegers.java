@@ -1,20 +1,20 @@
-package chapter10;
+package chapter10.Eg10_78_StackOfIntegers;
 
 /**
  * Created by bnamora on 7/23/16.
  */
 
-public class Eg10_8_StackOfIntegers {
+public class StackOfIntegers {
 
     private int[] elements;
     private int size;
     public static final int DEFAUL_CAPACITY = 16;
 
-    public Eg10_8_StackOfIntegers() {
+    public StackOfIntegers() {
         this(DEFAUL_CAPACITY);
     }
 
-    public Eg10_8_StackOfIntegers(int capacity) {
+    public StackOfIntegers(int capacity) {
         elements = new int[capacity];
     }
 
