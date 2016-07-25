@@ -1,6 +1,6 @@
 package chapter9;
 
-import chapter9.Ex9_11_LinearEquation.LinearEquation;
+import mylib.LinearEquation;
 
 import java.util.Scanner;
 

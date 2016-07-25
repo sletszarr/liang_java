@@ -1,6 +1,6 @@
 package chapter10;
 
-import chapter10.Eg10_78_StackOfIntegers.StackOfIntegers;
+import mylib.StackOfIntegers;
 
 import java.util.Scanner;
 

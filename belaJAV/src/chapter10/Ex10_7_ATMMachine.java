@@ -1,6 +1,6 @@
 package chapter10;
 
-import chapter9.Ex9_7_AccountClass.Account;
+import mylib.Account;
 
 import java.util.Scanner;
 
