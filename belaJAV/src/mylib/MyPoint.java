@@ -18,6 +18,11 @@ public class MyPoint {
         this.y = y;
     }
 
+    public MyPoint(MyPoint p) {
+        this.x = p.getX();
+        this.y = p.getY();
+    }
+
     public double getX() {
         return x;
     }
