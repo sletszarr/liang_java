@@ -10,11 +10,11 @@ public class Circle2D {
     private double cY; // center y
     private double radius;
 
-    Circle2D() {
+    public Circle2D() {
         this(0, 0, 1);
     }
 
-    Circle2D(double cX, double cY, double radius) {
+    public Circle2D(double cX, double cY, double radius) {
         this.cX = cX;
         this.cY = cY;
         this.radius = radius;

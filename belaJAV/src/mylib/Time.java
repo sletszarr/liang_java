@@ -10,17 +10,17 @@ public class Time {
     private int minute;
     private int second;
 
-    Time() {
+    public Time() {
         this(System.currentTimeMillis());
     }
 
-    Time(long elapsedTime) {
+    public Time(long elapsedTime) {
         second = (int) (elapsedTime / 1000) % 60;
         minute = (int) (elapsedTime / 1000 / 60) % 60;
         hour = (int) (elapsedTime / 1000 / 60 / 60) % 24;
     }
 
-    Time(int hour, int minute, int second) {
+    public Time(int hour, int minute, int second) {
         this.hour = hour;
         this.minute = minute;
         this.second = second;

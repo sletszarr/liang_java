@@ -11,21 +11,21 @@ public class RegularPolygon {
     private double centerX;
     private double centerY;
 
-    RegularPolygon() {
+    public RegularPolygon() {
         this.nSide = 3;
         this.sideLength = 1;
         this.centerX = 0;
         this.centerY = 0;
     }
 
-    RegularPolygon(int nSide, double sideLength) {
+    public RegularPolygon(int nSide, double sideLength) {
         this.nSide = nSide;
         this.sideLength = sideLength;
         this.centerX = 0;
         this.centerY = 0;
     }
 
-    RegularPolygon(int nSide, double sideLength,
+    public RegularPolygon(int nSide, double sideLength,
             double centerX, double centerY) {
         this.nSide = nSide;
         this.sideLength = sideLength;

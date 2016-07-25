@@ -15,12 +15,12 @@ public class Tax {
     private double[] rates;
     private double taxableIncome;
 
-    Tax() {
+    public Tax() {
         filingStatus = 0;
         taxableIncome = 50000;
     }
 
-    Tax(int filingStatus,
+    public Tax(int filingStatus,
         int[][] brackets,
         double[] rates,
         double taxableIncome)

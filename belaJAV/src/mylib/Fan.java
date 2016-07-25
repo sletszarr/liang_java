@@ -14,7 +14,7 @@ public class Fan {
     private double radius;
     private String color;
 
-    Fan() {
+    public Fan() {
         this.speed = SLOW;
         this.on = false;
         this.radius = 5;
