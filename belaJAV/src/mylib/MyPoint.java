@@ -6,8 +6,8 @@ package mylib;
 
 public class MyPoint {
 
-    private double x;
-    private double y;
+    public double x;
+    public double y;
 
     public MyPoint() {
         this(0, 0);
@@ -19,20 +19,12 @@ public class MyPoint {
     }
 
     public MyPoint(MyPoint p) {
-        this.x = p.getX();
-        this.y = p.getY();
-    }
-
-    public double getX() {
-        return x;
-    }
-
-    public double getY() {
-        return y;
+        this.x = p.x;
+        this.y = p.y;
     }
 
     public double distance(MyPoint b) {
-        return distance(b.getX(), b.getY());
+        return distance(b.x, b.y);
     }
 
     public double distance(double x1, double y1) {

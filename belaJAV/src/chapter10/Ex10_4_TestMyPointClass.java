@@ -15,7 +15,7 @@ public class Ex10_4_TestMyPointClass {
 
         System.out.printf("The distance between " +
                         "(%.1f, %.1f) and (%.1f, %.1f) is %.2f",
-                a.getX(), a.getY(), b.getX(), b.getY(),
+                a.x, a.y, b.x, b.y,
                 a.distance(b));
 
     }
