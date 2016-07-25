@@ -9,11 +9,11 @@ public class MyPoint {
     private double x;
     private double y;
 
-    MyPoint() {
+    public MyPoint() {
         this(0, 0);
     }
 
-    MyPoint(double x, double y) {
+    public MyPoint(double x, double y) {
         this.x = x;
         this.y = y;
     }
