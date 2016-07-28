@@ -93,5 +93,67 @@ public class MyRectangle2D {
 
     }
 
+    public static MyRectangle2D getRectangle(double[][] points) {
+        // get boundary
+        double[][] boundary = getBoundaryFromPoints(points);
 
+        // set boundary
+        double xMin = boundary[0][0];
+        double yMin = boundary[0][1];
+        double xMax = boundary[1][0];
+        double yMax = boundary[1][1];
+
+        // prepare arguments for constructor
+        double width = xMax - xMin;
+        double height = yMax - yMin;
+        double cx = xMin + width / 2;
+        double cy = yMin + height / 2;
+
+        return new MyRectangle2D(cx, cy, width, height);
+    }
+
+    private static double[][] getBoundaryFromPoints(double[][] points) {
+        double[][] boundary = new double[2][2];
+
+        // get all x's from points
+        double[] xs = new double[points.length];
+        for (int point = 0; point < points.length; point++) {
+            xs[point] = points[point][0];
+        }
+
+        // get all y's from points
+        double[] ys = new double[points.length];
+        for (int point = 0; point < points.length; point++) {
+            ys[point] = points[point][1];
+        }
+
+        // sort x's and y's
+        sort(xs);
+        sort(ys);
+
+        // get boundary
+        boundary[0][0] = xs[0];
+        boundary[0][1] = ys[0];
+        boundary[1][0] = xs[xs.length - 1];
+        boundary[1][1] = ys[ys.length - 1];
+
+        return boundary;
+    }
+
+    private static void sort(double[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            int minIndex = i;
+
+            for (int k = i + 1; k < nums.length; k++) {
+                if (nums[k] < nums[minIndex])
+                    minIndex = k;
+            }
+
+            if (minIndex != i) {
+                double temp = nums[i];
+                nums[i] = nums[minIndex];
+                nums[minIndex] = temp;
+            }
+        }
+    }
 }
