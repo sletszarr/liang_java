@@ -107,4 +107,71 @@ public class MyString1 {
         System.out.println();
     }
 
+    public static String[] split(String s, String dlm) {
+
+        // declare delimiter array
+        char[] delimiter;
+
+        // get delimiters
+        if (dlm.length() == 1)
+            delimiter = new char[]{dlm.charAt(0)};
+        else {
+            // get delimiters
+            // ignoring'[' and ']'
+            delimiter = new char[dlm.length() - 2];
+            for (int i=0,k = 1; k < dlm.length() - 1; i++,k++)
+                delimiter[i] = dlm.charAt(k);
+        }
+
+        // declare splits array
+        String[] splits = new String[s.length()];
+        int index = 0;
+
+        // initialize substring
+        String substring= "";
+
+        // get substring
+        for (int i = 0; i < s.length(); i++) {
+
+            // initialize flag
+            boolean iIsADelimiter = false;
+            char currentDelimiter = 0;
+
+            // check whether s[i]
+            // is a delimiter
+            for (char d : delimiter) {
+                if (s.charAt(i) == d) {
+                    iIsADelimiter = true;
+                    currentDelimiter = d;
+                    break;
+                }
+            }
+
+            // if s[i] is a delimiter
+            if (iIsADelimiter) {
+                if (substring.length() != 0) {
+                    splits[index++] = substring;
+                    substring = "";
+                }
+                splits[index++] = currentDelimiter + "";
+            }
+            else{
+                // concatenate s[i] to substring
+                substring += s.charAt(i);
+
+                // if this is the end of string s
+                if (i == s.length() - 1)
+                    splits[index++] = substring;
+            }
+        }
+
+        // return a new string array
+        // with total generated sub-strings
+        // as length
+        String[] str = new String[index];
+        System.arraycopy(splits, 0, str, 0, index);
+
+        return str;
+    }
+
 }
