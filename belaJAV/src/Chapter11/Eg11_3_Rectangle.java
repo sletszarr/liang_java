@@ -20,10 +20,9 @@ public class Eg11_3_Rectangle
 
     public Eg11_3_Rectangle(double width, double height,
                             String color, boolean filled) {
+        super(color, filled);
         this.width = width;
         this.height = height;
-        setColor(color);
-        setFilled(filled);
     }
 
     public double getWidth() {
