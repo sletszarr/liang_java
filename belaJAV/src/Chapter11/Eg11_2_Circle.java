@@ -49,4 +49,12 @@ public class Eg11_2_Circle
                 this.radius);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Eg11_2_Circle) {
+            return radius == ((Eg11_2_Circle) o).radius;
+        }
+        else return this == o;
+    }
+
 }
