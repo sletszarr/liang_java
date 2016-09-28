@@ -31,7 +31,16 @@ public class Ex5_9_FindSecondHighestScore {
             System.out.print("Enter his/her score: ");
             score = input.nextDouble();
 
+            if (score == highestScore || score == secondHighestScore) {
+                continue;
+            }
+
             if (score > highestScore) {
+                // change the highest to second highest
+                secondHighestScore = highestScore;
+                secondHighestScoreStudent = highestScoreStudent;
+
+                // update the highest score
                 highestScore = score;
                 highestScoreStudent = studentName;
             }
@@ -40,6 +49,7 @@ public class Ex5_9_FindSecondHighestScore {
                 secondHighestScore = score;
                 secondHighestScoreStudent = studentName;
             }
+
         }
 
         System.out.printf("\nThe student's name with the highest score %.2f is %s",
