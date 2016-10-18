@@ -25,6 +25,12 @@ public class Account {
         dateCreated = new Date();
     }
 
+
+    public Account(int id, double balance, double annualInterestRate) {
+        this(id, balance);
+        this.annualInterestRate = annualInterestRate;
+    }
+
     public int getId() {
         return id;
     }
